@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion> <!--maven의 pom.xml모델 버전 , 형식이 4.0번전   -->
+    <groupId>com.zetcode</groupId>  <!--프로젝트를 생성한 그룹명 , 보통 URL의 역순으로 지정 -->
+   <artifactId>SpringStar-1</artifactId> <!-- 그룹 ID이다. 프로젝트를 만들 때 입력했다. 제작자와 회사, 단체 등을 식별하기 위한 것  -->
+   <version>2.3.0.RELEASE</version> <!--애플리케이션의 버전  -->
+   <packaging>jar</packaging> <!--jar, war, ear, pom등 패키지 유형을 나타낸다.  -->
+
+    <properties>   <!-- maven 내부에서 반복적으로 사용될 상수 값을 정의할 때 사용  -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  <!--가장 많이 사용되는 가변 길이 유니코드 인코딩  -->
+        <maven.compiler.source>11</maven.compiler.source>  <!--  -->
+        <maven.compiler.target>11</maven.compiler.target>  <!--  -->
+    </properties>  <!--  -->
+    
+    <parent>  <!-- 상속 받는것  -->
+        <groupId>org.springframework.boot</groupId>  <!--  -->
+        <artifactId>spring-boot-starter-parent</artifactId>  <!-- Maven 구성 단순화하는 것 , 스프링 부트 응용 프로그램에 대한 일반적인 구성  -->
+        <version>2.1.7.RELEASE</version>  <!--  -->
+    </parent> 
+
+    <dependencies>  <!-- 필수사항 : pom.xml 핵심인 의존성 정의하는부분, 라이브러리 불러오는 부분   -->
+        <dependency>  <!--  -->
+            <groupId>org.springframework.boot</groupId>  <!--  -->
+            <artifactId>spring-boot-starter-web</artifactId>  <!-- 웹 어플리케이션에서 필요한 라이브러리 설정 -->
+        </dependency> 
+
+        <dependency>  <!--  -->
+            <groupId>org.postgresql</groupId>  <!--  -->
+            <artifactId>postgresql</artifactId>  <!--  -->
+            <scope>runtime</scope>  <!--  -->
+        </dependency>  
+        
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools 
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		    <version>2.3.0.RELEASE</version>
+		</dependency>-->
+
+
+        <dependency>  <!--  -->
+            <groupId>org.springframework.boot</groupId>  <!--  --> 
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>  <!-- Thymeleaf 뷰를 사용하여 MVC 웹 응용 프로그램을 구축하기위한 스타터 -->
+        </dependency>
+
+        <dependency>  <!--  -->
+            <groupId>org.springframework.boot</groupId>  <!--  -->
+            <artifactId>spring-boot-starter-data-jpa</artifactId>  <!--  -->
+        </dependency>
+
+    </dependencies>
+
+    <build>  <!--  -->
+        <plugins>  <!--  -->
+            <plugin>  <!--  -->
+                <groupId>org.springframework.boot</groupId>  <!--  -->
+                <artifactId>spring-boot-maven-plugin</artifactId>  <!--  Maven 라이프 사이클의 패키지 단계에서 빌드 된 아카이브 jar또는 war아카이브를 다시 패키지 -->
+            </plugin>
+        </plugins>
+    </build>
+</project>

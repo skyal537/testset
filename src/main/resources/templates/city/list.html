@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base List</title>
+</head>
+<body>
+    <div>
+       <a th:href="@{/city/new}">추가</a>
+    </div>
+    <div>
+    <h2>Base List</h2>
+      <div>
+         <table>
+            <thead>
+            <tr>
+              <th>ID </th>
+              <th>Name </th>
+              <th>Population </th>
+              <th>수정 </th>
+              <th>삭제 </th>
+            <tr>
+           </thead>
+           
+           <tbody>
+           <tr th:each="list : ${city}">
+           <td th:text="${list.id}"></td>
+           <td th:text="${list.name}"></td>
+           <td th:text="${list.population}"></td>
+           <td> <a th:href="${'/city/edit/' + list.id}">수정</a></td>
+           <td> <a th:href="${'/city/delete/' + list.id}">삭제</a></td>
+           <td></td>
+           
+           
+           </tbody>
+         
+         </table>
+      
+      
+      
+      </div>
+    
+    
+    
+    
+    </div>
+</body>
+</html>
